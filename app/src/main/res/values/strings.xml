@@ -2,4 +2,22 @@
     <string name="app_name">Zoey\'s Android Labs</string>
     <string name ="hello_message">Hello world!</string>
     <string name="button_message">I\'m a button</string>
+    <string name="editmessage">I\'m an EditText</string>
+    <string name="hinttext">Write something here</string>
+
+    <string name="question1">What languages do you like?</string>
+    <string name="answer3">Java</string>
+    <string name="answer4">Python</string>
+    <string name="answer5">C++</string>
+
+    <string name="question3">Are you a cool person?</string>
+    <string name="answer1">Yes,Totally.</string>
+    <string name="answer2">No,I am a bored person.</string>
+
+    <string name="question2">Do you like outdoor?</string>
+    <string name="answer6">Yes</string>
+    <string name="answer7">No</string>
+
+
+
 </resources>
