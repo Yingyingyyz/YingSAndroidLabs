@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Zoey\'s Android Labs</string>
-    <string name ="hello_message">Hello world!</string>
+    <string name="hello_message">Hello world!</string>
     <string name="button_message">I\'m a button</string>
+    <string name="enter_email">Enter your email address:</string>
+    <string name="type_email">Type email here</string>
+    <string name="type_pwd">Type your password:</string>
 </resources>
