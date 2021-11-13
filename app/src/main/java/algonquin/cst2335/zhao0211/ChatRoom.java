@@ -32,6 +32,7 @@ public class ChatRoom extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chatlayout);
         chatList = findViewById(R.id.myrecycler);
@@ -40,6 +41,7 @@ public class ChatRoom extends AppCompatActivity {
         chatList.setLayoutManager(new LinearLayoutManager(this));
 
         EditText editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
+        MyOpenHelper opener = new MyOpenHelper();
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
