@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * @author : Yingying Zhao
- * @date : 11/11/21 4:43 PM
  * @des :
  */
 public class MyOpenHelper extends SQLiteOpenHelper {
