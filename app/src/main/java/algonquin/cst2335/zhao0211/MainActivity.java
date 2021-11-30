@@ -6,6 +6,7 @@ import androidx.core.graphics.BitmapCompat;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -32,6 +33,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -137,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
+
+
                     Bitmap image = null;
                     File file = new File(getFilesDir(), iconName + ".png");
                     Log.e("TAG", "path = " + file.getAbsolutePath());
@@ -151,9 +156,19 @@ public class MainActivity extends AppCompatActivity {
                         int responseCode = connection.getResponseCode();
                         if (responseCode == 200) {
                             image = BitmapFactory.decodeStream(connection.getInputStream());
-                            image.compress(Bitmap.CompressFormat.PNG, 100, openFileOutput(iconName + ".png", Activity.MODE_PRIVATE));
                         }
                     }
+
+                    FileOutputStream fOut = null;
+                    try {
+                        fOut = openFileOutput( iconName + ".png", Context.MODE_PRIVATE);
+                        image.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+                        fOut.flush();
+                        fOut.close();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
                     Bitmap finalImage = image;
                     String finalCurrent = current;
                     String finalMin = min;
